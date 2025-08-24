@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fight Club Game</title>
+    <link rel="stylesheet" href="fight-club.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="registration" class="screen active">
+        <h1>🥊 Fight Club Game</h1>
+        <div class="input-group">
+          <h2>Welcome to the Fight Club!</h2>
+          <br /><br /><br />
+          <p>Enter your name to begin:</p>
+          <input
+            type="text"
+            id="playerNameInput"
+            placeholder="Your name"
+            maxlength="20"
+          />
+          <br />
+          <button class="btn" onclick="registerPlayer()">Enter Game</button>
+        </div>
+      </div>
+      <div id="home" class="screen">
+        <h1>🏠 Main Menu</h1>
+        <div class="navigation">
+          <h2 id="welcomeText">Welcome, Player!</h2>
+          <button class="btn" onclick="startBattle()">⚔️ New Battle</button>
+          <button class="btn" onclick="showScreen('character')">
+            👤 Character
+          </button>
+          <button class="btn" onclick="showScreen('settings')">
+            ⚙️ Settings
+          </button>
+        </div>
+      </div>
+      <div id="character" class="screen">
+        <h1>👤 Character</h1>
+        <div class="avatar-container">
+          <img id="currentAvatar" class="avatar" src="" alt="Avatar" />
+          <h2 id="characterName">Player</h2>
+        </div>
+
+        <div class="stats">
+          <div class="record">
+            <span>🏆 Wins:</span>
+            <span id="winsCount">0</span>
+          </div>
+          <div class="record">
+            <span>💀 Losses:</span>
+            <span id="lossesCount">0</span>
+          </div>
+        </div>
+
+        <h3>Choose new avatar:</h3>
+        <div class="avatar-selector" id="avatarSelector">
+        </div>
+
+        <div class="navigation">
+          <button class="btn" onclick="showScreen('home')">🏠 Main Menu</button>
+        </div>
+      </div>
+      <div id="settings" class="screen">
+        <h1>⚙️ Settings</h1>
+        <div class="input-group">
+          <h3>Change name:</h3>
+          <input
+            type="text"
+            id="newNameInput"
+            placeholder="New name"
+            maxlength="20"
+          />
+          <br />
+          <button class="btn" onclick="changeName()">Save Name</button>
+        </div>
+
+        <div class="navigation">
+          <button class="btn" onclick="showScreen('home')">🏠 Main Menu</button>
+        </div>
+      </div>
+      <div id="battle" class="screen">
+        <h1>⚔️ Battle</h1>
+
+        <div class="battle-area">
+          <div class="fighter">
+            <h3 id="playerBattleName">Player</h3>
+            <img id="playerBattleAvatar" class="avatar" src="" alt="Player" />
+
+            <div class="health-bar">
+              <div class="health-fill" id="playerHealthFill"></div>
+              <div class="health-text" id="playerHealthText">100/100</div>
+            </div>
+
+            <div class="body-zones">
+              <div class="zone" data-zone="head" onclick="selectZone('head')">
+                🧠 Head
+              </div>
+              <div class="zone" data-zone="body" onclick="selectZone('body')">
+                💪 Body
+              </div>
+              <div class="zone" data-zone="legs" onclick="selectZone('legs')">
+                🦵 Legs
+              </div>
+            </div>
+          </div>
+
+          <div class="fighter">
+            <h3 id="enemyName">Enemy</h3>
+            <img id="enemyAvatar" class="avatar" src="" alt="Enemy" />
+
+            <div class="health-bar">
+              <div class="health-fill" id="enemyHealthFill"></div>
+              <div class="health-text" id="enemyHealthText">100/100</div>
+            </div>
+
+            <div id="enemyInfo" class="selection-info">
+              <p><strong id="enemyDescription">Choose enemy</strong></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="selection-info">
+          <p><strong>Select 1 zone to attack and 2 zones to defend</strong></p>
+          <br /><br />
+          <p>Attack: <span id="attackSelection">not selected</span></p>
+          <br /><br />
+          <p>Defense: <span id="defenseSelection">not selected</span></p>
+        </div>
+
+        <div class="controls">
+          <button class="btn" id="attackBtn" onclick="performRound()" disabled>
+            🥊 ATTACK!
+          </button>
+        </div>
+
+        <div class="combat-log" id="combatLog">
+          <div class="log-entry">
+            🔥 Battle started! Select attack and defense zones.
+          </div>
+        </div>
+
+        <div class="navigation">
+          <button class="btn" onclick="showScreen('home')">🏠 Main Menu</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="fight-club.js"></script>
+  </body>
+</html>

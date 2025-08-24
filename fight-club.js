@@ -7,7 +7,6 @@ let gameData = {
   currentBattle: null,
 };
 
-// Avatars - реальні зображення персонажів
 const avatars = [
   "https://img.icons8.com/color/96/person-male.png", // Default
   "https://img.icons8.com/color/96/shield.png", // Warrior
@@ -17,7 +16,6 @@ const avatars = [
   "https://img.icons8.com/color/96/archery.png", // Archer
 ];
 
-// Enemies - реальні зображення ворогів
 const enemies = [
   {
     name: "Mutant Spider",
@@ -32,7 +30,7 @@ const enemies = [
   },
   {
     name: "Mountain Spider 3000",
-    avatar: "https://img.icons8.com/color/96/spider.png", // Реальний тролль
+    avatar: "https://img.icons8.com/color/96/spider.png"
     health: 180,
     damage: 35,
     critChance: 0.1,
@@ -43,7 +41,7 @@ const enemies = [
   },
   {
     name: "Battle Robot",
-    avatar: "https://img.icons8.com/color/96/robot-2.png", // Реальний робот
+    avatar: "https://img.icons8.com/color/96/robot-2.png"
     health: 150,
     damage: 30,
     critChance: 0.2,
@@ -79,14 +77,11 @@ window.onload = function () {
   updateUI();
 };
 
-// Save and load data (localStorage not used, memory only)
 function saveGameData() {
-  // In real project this would be localStorage
   console.log("Data saved to memory");
 }
 
 function loadGameData() {
-  // In real project this would load from localStorage
   console.log("Data loaded from memory");
 }
 
@@ -104,7 +99,6 @@ function setupAvatars() {
   });
 }
 
-// Register player
 function registerPlayer() {
   const nameInput = document.getElementById("playerNameInput");
   const name = nameInput.value.trim();
@@ -137,7 +131,6 @@ function changeName() {
   saveGameData();
 }
 
-// Select avatar
 function selectAvatar(index) {
   gameData.currentAvatar = index;
   updateUI();

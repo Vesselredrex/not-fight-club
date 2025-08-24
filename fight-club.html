@@ -8,7 +8,6 @@
   </head>
   <body>
     <div class="container">
-      <!-- Registration Screen -->
       <div id="registration" class="screen active">
         <h1>🥊 Fight Club Game</h1>
         <div class="input-group">
@@ -25,8 +24,6 @@
           <button class="btn" onclick="registerPlayer()">Enter Game</button>
         </div>
       </div>
-
-      <!-- Home Page -->
       <div id="home" class="screen">
         <h1>🏠 Main Menu</h1>
         <div class="navigation">
@@ -40,8 +37,6 @@
           </button>
         </div>
       </div>
-
-      <!-- Character Page -->
       <div id="character" class="screen">
         <h1>👤 Character</h1>
         <div class="avatar-container">
@@ -62,15 +57,12 @@
 
         <h3>Choose new avatar:</h3>
         <div class="avatar-selector" id="avatarSelector">
-          <!-- Avatars will be added dynamically -->
         </div>
 
         <div class="navigation">
           <button class="btn" onclick="showScreen('home')">🏠 Main Menu</button>
         </div>
       </div>
-
-      <!-- Settings Page -->
       <div id="settings" class="screen">
         <h1>⚙️ Settings</h1>
         <div class="input-group">
@@ -89,13 +81,10 @@
           <button class="btn" onclick="showScreen('home')">🏠 Main Menu</button>
         </div>
       </div>
-
-      <!-- Battle Page -->
       <div id="battle" class="screen">
         <h1>⚔️ Battle</h1>
 
         <div class="battle-area">
-          <!-- Player -->
           <div class="fighter">
             <h3 id="playerBattleName">Player</h3>
             <img id="playerBattleAvatar" class="avatar" src="" alt="Player" />
@@ -118,7 +107,6 @@
             </div>
           </div>
 
-          <!-- Enemy -->
           <div class="fighter">
             <h3 id="enemyName">Enemy</h3>
             <img id="enemyAvatar" class="avatar" src="" alt="Enemy" />
